@@ -6,8 +6,8 @@
     border-radius: 20px;
 }
 #inputBox{
+    font-size: 30px;
     padding: 20px 20px;
-    background-color: black;
     color: white;
 }
 
@@ -26,4 +26,7 @@
     margin-bottom: 5px;
     margin-right: 5px;
     border: none;
+}
+.button_header button:hover{
+    cursor: pointer;
 }
