@@ -18,6 +18,7 @@ let buttonMul = document.querySelector("#buttonmul")
 let buttonDot = document.querySelector("#buttondot")
 let buttonEqual = document.querySelector("#buttonequal")
 let buttonC = document.querySelector("#buttonC")
+inputBox.innerHTML = "0"
 var Text =""
 
 button0.onclick = ()  =>{
@@ -31,7 +32,7 @@ button1.onclick = ()  =>{
 }
 
 button2.onclick = ()  =>{
-    Text+="2"
+    Text +="2"
     inputBox.innerHTML =  Text
 }
 
@@ -92,9 +93,9 @@ buttonDot.onclick = ()  =>{
     inputBox.innerHTML = Text
 }
 buttonC.onclick = ()  =>{
-    Text =""
-    inputBox.innerHTML = Text
+    inputBox.innerHTML ="0"
+    Text = ""
 }
 buttonEqual.onclick = ()  =>{
-    inputBox.innerHTML = "equal"
+    inputBox.innerHTML = eval(Text)  // eval function calcule from String ...
 }
