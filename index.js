@@ -1,6 +1,5 @@
 
-
- var inputBox = document.querySelector("#inputBox")
+var inputBox = document.querySelector("#inputBox")
 let button0 = document.querySelector("#button0")
 let button1 = document.querySelector("#button1")
 let button2 = document.querySelector("#button2")
@@ -18,12 +17,29 @@ let buttonMul = document.querySelector("#buttonmul")
 let buttonDot = document.querySelector("#buttondot")
 let buttonEqual = document.querySelector("#buttonequal")
 let buttonC = document.querySelector("#buttonC")
+let buttonCE = document.querySelector("#buttonCE")
+
 inputBox.innerHTML = "0"
+
 var Text =""
 
+function Validation(text){
+    let length = text.length
+    if (length ==0){
+        return false
+    }else if(text[length-1] =="+" || text[length-1] =="-" || text[length-1] =="*" || text[length-1] =="/" || text[length-1]=="." ){
+        return false
+    }
+
+    return true
+}
+
 button0.onclick = ()  =>{
-    Text +="0"
-    inputBox.innerHTML = Text
+    if(Text !=""){
+        Text +="0"
+        inputBox.innerHTML = Text
+    }
+
 }
 
 button1.onclick = ()  =>{
@@ -72,30 +88,61 @@ button9.onclick = ()  =>{
     inputBox.innerHTML = Text
 }
 buttonAdd.onclick = ()  =>{
-    Text +="+"
-    inputBox.innerHTML = Text
+
+    if(Validation(Text)){
+        Text +="+"
+        inputBox.innerHTML = Text
+    }
 }
 
 buttonSub.onclick = ()  =>{
-    Text +="-"
-    inputBox.innerHTML = Text
+   
+    if(Validation(Text)){
+        Text +="-"
+        inputBox.innerHTML = Text
+    }
 }
 buttonDiv.onclick = ()  =>{
-    Text +="/"
-    inputBox.innerHTML = Text
+   
+    if(Validation(Text)){
+        Text +="/"
+        inputBox.innerHTML = Text
+    }
 }
 buttonMul.onclick = ()  =>{
-    Text +="*"
-    inputBox.innerHTML = Text
+   
+    if(Validation(Text)){
+        Text +="*"
+        inputBox.innerHTML = Text
+    }
 }
 buttonDot.onclick = ()  =>{
-    Text +="."
-    inputBox.innerHTML = Text
+   
+    if(Validation(Text)){
+        Text +="."
+        inputBox.innerHTML = Text
+    }
 }
 buttonC.onclick = ()  =>{
     inputBox.innerHTML ="0"
     Text = ""
 }
-buttonEqual.onclick = ()  =>{
-    inputBox.innerHTML = eval(Text)  // eval function calcule from String ...
+
+buttonCE.onclick =() =>{
+    Text = Text.substring(0,Text.length -1)
+    inputBox.innerHTML = Text
+    if(Text.length ==0){
+        inputBox.innerHTML = "0"
+    }
 }
+
+
+buttonEqual.onclick = ()  =>{
+    if(Text !=""){
+        Text = eval(Text)
+        inputBox.innerHTML = Text // eval function calcule from String ...
+
+    }
+}
+
+

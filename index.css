@@ -34,3 +34,12 @@
 #buttondot{
     padding:21px 26px  ;
 }
+
+#buttonCE{
+    padding: 19px 19px !important;
+    background-color: rgb(221, 176, 176);
+}
+
+#buttonC{
+    background-color: rgb(242, 68, 68);
+}
